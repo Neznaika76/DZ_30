@@ -1,16 +1,19 @@
-# This is a sample Python script.
+from seleck import start
+import csv
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+data = [['Фамилие', 'Имя', 'Отчество', 'Телефон'],
+        ['Нестеров', 'Сергей', 'Викторович', '89031234567'],
+        ['Андрианив', 'Олег', 'Валерьевич', '89161234567'],
+        ['Щеглов', 'Андрей', 'Иванович', '89017654321'],
+        ['Корольков', 'Денис', 'Александрович', '89037654321']]
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+with open('sw_data_new.csv', 'w') as f:
+    writer = csv.writer(f)
+    for row in data:
+        writer.writerow(row)
 
+with open('sw_data_new.csv') as f:
+    print(f.read())
+start()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
